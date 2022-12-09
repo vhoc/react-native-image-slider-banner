@@ -70,6 +70,17 @@ export const ImageSlider = ({
             clearTimeout(timerRef?.current)
         }
     }, [currentIndex, imageViewer]);
+    
+    /** Modification by Victor */
+    useEffect(() => {
+        setCurrentIndex(0)
+        setSelectedIndex(0)
+        slider.current.scrollToIndex({
+            index: 0,
+            animated: true,
+          });
+    }, [data])
+    /** End of modification */
 
     const changeSliderListIndex = () => {
         if (slider.current) {
